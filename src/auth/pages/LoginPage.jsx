@@ -1,7 +1,7 @@
-import { Link as RouterLink } from "react-router-dom"
-import { Google } from "@mui/icons-material"
-import { Button, Grid, Link, TextField, Typography } from "@mui/material"
-import { AuthLayout } from "../layout/AuthLayout"
+import { Link as RouterLink } from 'react-router-dom';
+import { Google } from '@mui/icons-material';
+import { Button, Grid, Link, TextField, Typography } from '@mui/material';
+import { AuthLayout } from '../layout/AuthLayout';
 
 export const LoginPage = () => {
   return (
@@ -51,6 +51,5 @@ export const LoginPage = () => {
         </Grid>
       </form>
     </AuthLayout>
-    
   )
 }
