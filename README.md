@@ -9,3 +9,4 @@
 
 ### Create Journal Layout and jorunal page
 ### Create Navbar
+### Create Sidebar
