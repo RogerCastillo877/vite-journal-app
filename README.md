@@ -6,3 +6,5 @@
 ### Create LoginPage
 ### Create Auth Layout
 ### Create RegisterPage
+
+### Create Journal Layout and jorunal page
