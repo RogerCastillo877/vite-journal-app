@@ -12,3 +12,6 @@
 ### Create Sidebar
 ### Nothing selected view
 ### View page - Image List - Float Buttom
+
+## Install Redux
+yarn add @reduxjs/toolkit react-redux
