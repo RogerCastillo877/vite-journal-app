@@ -1,18 +1,25 @@
-import { useDispatch } from 'react-redux';
+import { useMemo } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link as RouterLink } from 'react-router-dom';
-import { Google } from '@mui/icons-material';
 import { Button, Grid, Link, TextField, Typography } from '@mui/material';
+import { Google } from '@mui/icons-material';
+
 import { AuthLayout } from '../layout/AuthLayout';
+
 import { useForm } from '../../hooks';
 import { checkingAuthentication, startGoogleSignIn } from '../../store/auth';
 
 export const LoginPage = () => {
+
+  const { status } = useSelector( state => state.auth )
 
   const dispatch = useDispatch()
   const { email, password, onInputChange } = useForm({
     email: 'email@gmail.com',
     password: '123456'
   });
+
+  const isAuthtenticating = useMemo( () => status === 'checking', [status]);
 
   const onSubmit = ( event ) => {
     event.preventDefault();
@@ -22,8 +29,7 @@ export const LoginPage = () => {
   }
 
   const onGoogleSignIn = () => {
-    console.log('On google sign in');
-    dispatch( startGoogleSignIn )
+    dispatch( startGoogleSignIn() )
   }
 
   return (
@@ -57,13 +63,21 @@ export const LoginPage = () => {
           <Grid container spacing={ 2 } sx={{ mb: 2, mt: 1 }}>
             
             <Grid item xs={ 12 } sm={ 6 }>
-              <Button type='submit' variant='contained' fullWidth>
+              <Button
+                disabled={ isAuthtenticating }
+                type='submit'
+                variant='contained'
+                fullWidth>
                 Login
               </Button>
             </Grid>
 
             <Grid item xs={ 12 } sm={ 6 }>
-              <Button onClick={ onGoogleSignIn } variant='contained' fullWidth>
+              <Button
+                disabled={ isAuthtenticating }
+                onClick={ onGoogleSignIn }
+                variant='contained'
+                fullWidth>
                 <Google />
                 <Typography sx={{ ml: 1 }}>Google</Typography>
               </Button>
