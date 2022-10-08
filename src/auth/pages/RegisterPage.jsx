@@ -8,9 +8,9 @@ import { startCreatingUserWithEmailPassword } from '../../store/auth';
 import { useMemo } from 'react';
 
 const formData ={
-  email: 'email@gmail.com',
-  password: '123456',
-  displayName: 'Rocas'
+  email: '',
+  password: '',
+  displayName: ''
 }
 
 const formValidations = {
