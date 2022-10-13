@@ -12,7 +12,6 @@ export const SidebarItem = ({ title = '', body, id, date, imageUrls = [] }) => {
 
   const onClickNote = () => {
     dispatch( setActiveNote({ title, body, id, date, imageUrls }) );
-    console.log(title);
   };
 
   const newTitle = useMemo( () => {
