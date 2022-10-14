@@ -15,3 +15,10 @@
 
 ## Install Redux
 yarn add @reduxjs/toolkit react-redux
+
+## Upload images to cloudinary
+From Postman
+POST: https://api.cloudinary.com/v1_1/practica-cursos/upload
+Body:
+file: charge file
+upload_preset: journal-react (name of folder in cloudinary)
