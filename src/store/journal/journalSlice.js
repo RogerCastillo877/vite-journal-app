@@ -1,3 +1,4 @@
+import { Store } from '@mui/icons-material';
 import { createSlice } from '@reduxjs/toolkit';
 
 export const journalSlice = createSlice({
@@ -55,7 +56,10 @@ export const journalSlice = createSlice({
       state.notes = [];
       state.active = null;
     },
-    deleteNoteById: ( state, action ) => {},
+    deleteNoteById: ( state, action ) => {
+      state.active = null;
+      state.notes = state.notes.filter( note => note.id !== action.payload );
+    },
   },
 })
 
