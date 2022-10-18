@@ -22,3 +22,46 @@ POST: https://api.cloudinary.com/v1_1/practica-cursos/upload
 Body:
 file: charge file
 upload_preset: journal-react (name of folder in cloudinary)
+
+## Config Jest + React Testing Library
+### Install
+```
+yarn add --dev jest babel-jest @babel/preset-env @babel/preset-react 
+yarn add --dev @testing-library/react @types/jest jest-environment-jsdom
+```
+
+### If use fetch API
+```
+yarn add --dev whatwg-fetch
+```
+
+### Update scripst in __package.json__
+```
+"scripts: {
+  ...
+  "test": "jest --watchAll"
+```
+
+### Create Config of __babel.config.js__
+```
+module.exports = {
+    presets: [
+        [ '@babel/preset-env', { targets: { esmodules: true } } ],
+        [ '@babel/preset-react', { runtime: 'automatic' } ],
+    ],
+};
+```
+
+### Create config of __jest.config.js__
+```
+module.exports = {
+    testEnvironment: 'jest-environment-jsdom',
+    setupFiles: ['./jest.setup.js']
+}
+```
+
+### Setup __jest.setup.js__
+```
+// If you need use FetchAPI in the project
+import 'whatwg-fetch'; // <-- yarn add whatwg-fetch
+```
