@@ -65,3 +65,14 @@ module.exports = {
 // If you need use FetchAPI in the project
 import 'whatwg-fetch'; // <-- yarn add whatwg-fetch
 ```
+
+### Install SDK cloudinary to delete file
+```
+yarn add -D cloudinary
+if throw error setImmediate
+yarn add -D setimmediate
+```
+And add in __jest.setup.js__
+```
+import 'setimmediate';
+```
