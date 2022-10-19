@@ -80,3 +80,27 @@ to test functions of google add in __jest.config.js__
 ```
 transformIgnorePatterns: [],
 ```
+
+## Environment variables
+Use ```import.meta.env``` to see the variables
+Install ```yarn add -D dotenv```
+
+### create a new helper __src/helpers/getEnvironments__
+```
+import.meta.env;
+
+  return {
+    ...import.meta.env
+  };
+```
+
+#### Set in __jest.setup.js__
+```
+require('dotenv').config({
+  path: '.env.test'
+});
+
+jest.mock('./src/helpers/getEnvironments', () => ({
+  getEnvironments: () => ({ ...process.env })
+}));
+```
