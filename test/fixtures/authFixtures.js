@@ -30,4 +30,4 @@ export const demoUser = {
   email: 'email@gmail.com',
   displayName: 'Demo User',
   photoURL: 'https://demo.jpg',
-}
+};
