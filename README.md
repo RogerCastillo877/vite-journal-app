@@ -76,3 +76,7 @@ And add in __jest.setup.js__
 ```
 import 'setimmediate';
 ```
+to test functions of google add in __jest.config.js__
+```
+transformIgnorePatterns: [],
+```
