@@ -30,6 +30,7 @@ export const LoginPage = () => {
   }
 
   const onGoogleSignIn = () => {
+    console.log('onGoogleSignIn');
     dispatch( startGoogleSignIn() )
   }
 
@@ -88,9 +89,11 @@ export const LoginPage = () => {
             <Grid item xs={ 12 } sm={ 6 }>
               <Button
                 disabled={ isAuthtenticating }
-                onClick={ onGoogleSignIn }
                 variant='contained'
-                fullWidth>
+                fullWidth
+                aria-label='google-button'
+                onClick={ onGoogleSignIn }
+                >
                 <Google />
                 <Typography sx={{ ml: 1 }}>Google</Typography>
               </Button>
